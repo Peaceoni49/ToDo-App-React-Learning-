@@ -2,13 +2,19 @@ import React from "react"
 class Complete extends React.Component {
     render() {
         return (
-            <ul class="list-group">
-  <div>
-      <li className="list-group-item">Take out the trash</li>
-  
-<button type="button" classNmae="btn btn-secondary btn-lg">Delete</button>
+            <div>
+      <div className= "col-6">
+          <p className={this.props.completed ? "competed" :""}>
+              {this.props.text}
+          </p>
+      
+      </div>
+      
+      <div className= "col">
+      
+      <button className="btn btn-danger">Delete</button>
+      </div>
 </div>
-</ul>
         );
     }
 }

@@ -1,14 +1,23 @@
 import React from "react"
+import "./IncompItem.css";
 class IncompItem extends React.Component {
     render() {
         return (
-            <ul class="list-group">
+            
   <div>
-      <li className="list-group-item">Take out the trash</li>
-  <button type="button" className="btn btn-primary btn-lg">Complete</button>
-<button type="button" classNmae="btn btn-secondary btn-lg">Delete</button>
+      <div className= "col-6">
+          <p className={this.props.incompleted ? "incompeted" :""}>
+              {this.props.text}
+          </p>
+      
+      </div>
+
+      <div className= "col">
+      <button className="btn btn-danger">Complete</button>
+      <button className="btn btn-danger">Delete</button>
+      </div>
 </div>
-</ul>
+
         );
     }
 }
