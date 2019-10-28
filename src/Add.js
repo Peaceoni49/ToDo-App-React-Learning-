@@ -1,24 +1,41 @@
 import React from "react"
 
 class Add extends React.Component {
+    state = {
+        newItemText: ""
+    }
+
+    updateNewItemText =(event)=> {
+        this.setState({
+            newItemText: event.target.value
+        })
+    }
+    handleClick= (event) => {
+        this.props.addNewTaskFunc(this.state.newItemText);
+        this.setState({
+            newItemText:""
+        })
+    }
     render(){
         return (
     <form>
   <div className="row">
     <div className="col-8">
       <input type="text" class="form-control"
-       placeholder="Add list">
-
-      </input>
+       placeholder="Add list"
+       value={this.state.newItemText}
+       onChange={this.updateNewItemText}
+       ></input>
     </div>
-    <div>
+    
+    
     <button type="button" 
     className="btn btn-primary" 
     data-toggle="button" aria-pressed="false"
-     autocomplete="off">
+     autocomplete="off" onClick={this.handleClick} disabled={this.state.newItemText.lenght ===0}>
  Add
 </button>
-  </div>
+  
   </div>
 </form>
             

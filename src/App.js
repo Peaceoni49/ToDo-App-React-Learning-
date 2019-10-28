@@ -9,15 +9,30 @@ import Complete from './Complete';
 import './App.css';
 
 
-class App extends React.Component {
+class App extends Component {
   state = {
     tasks: [
       {text: "take out the trash", completed: false, date: "2019-10-21",id:1},
-      {text: "bake cake", completed: true, date: "2019-10-21",id:1},
-      {text: "buy grocerys", completed: false, date: "2019-10-21",id:1},
-      {text: "clean the floor", completed: true, date: "2019-10-21",id:1},
+      {text: "bake cake", completed: true, date: "2019-10-21",id:2},
+      {text: "buy grocerys", completed: false, date: "2019-10-21",id:3},
+      {text: "clean the floor", completed: true, date: "2019-10-21",id:4},
     ]
   }
+
+  addNewTask = (taskText) => {
+    const tasksCopy = this.state.tasks.slice()
+
+    const newTask = {
+      text: taskText,
+       completed: false,
+        date: "2019-10-21",
+        id:5
+    };
+    tasksCopy.push(newTask)
+    this.setState({
+      tasks:tasksCopy
+    });
+  };
   render() {
     const completedTasks = this.state.tasks.filter(task => {
       return task.completed
@@ -30,7 +45,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header />
-        <Add />
+        <Add addNewTaskFunc={this.addNewTask} />
         <CountIncomp count/>
         
         {incompletedTasks.map(task=>{
