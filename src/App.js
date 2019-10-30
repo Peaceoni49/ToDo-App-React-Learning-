@@ -62,8 +62,8 @@ class App extends Component {
         
         <ItemComp />
 
-        {completedTasks.map(task=>{
-        return<Complete text={task.text} completed={task.completed} time={task.date} key={task.id} />
+        {completedTasks.map((task, index)=>{
+        return<Complete text={task.text} completed={task.completed} time={task.date} key={task.id} handleDelete={this.deleteItem.bind(this,index)}/>
         })};
         
         
