@@ -14,7 +14,7 @@ class IncompItem extends React.Component {
 
       <div className= "col">
       <button className="btn btn-danger">Complete</button>
-      <button className="btn btn-danger">Delete</button>
+      <button className="btn btn-danger" onClick={this.props.handleDelete.bind(this, item)}>Delete</button>
       </div>
 </div>
 

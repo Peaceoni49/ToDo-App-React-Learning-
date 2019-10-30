@@ -18,6 +18,9 @@ class App extends Component {
       {text: "clean the floor", completed: true, date: "2019-10-21",id:4},
     ]
   }
+  deleteItem =(item, e) => {
+
+  }
 
   addNewTask = (taskText) => {
     const tasksCopy = this.state.tasks.slice()
@@ -33,6 +36,9 @@ class App extends Component {
       tasks:tasksCopy
     });
   };
+  handleDelete (event) {
+
+  }
   render() {
     const completedTasks = this.state.tasks.filter(task => {
       return task.completed
@@ -49,7 +55,7 @@ class App extends Component {
         <CountIncomp count/>
         
         {incompletedTasks.map(task=>{
-        return<IncompItem text={task.text} completed={task.completed} time={task.date} key={task.id} />
+        return<IncompItem text={task.text} completed={task.completed} time={task.date} key={task.id} handleDelete={this.deleteItem.bind(this,item)} />
         })};
         
         <ItemComp />
