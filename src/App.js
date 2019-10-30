@@ -1,4 +1,5 @@
 import React, { Component }  from 'react';
+import uuid from "uuid/v4"
 import Header from "./Header";
 import Add from "./Add";
 import CountIncomp from "./CountIncomp"
@@ -12,10 +13,10 @@ import './App.css';
 class App extends Component {
   state = {
     tasks: [
-      {text: "take out the trash", completed: false, date: "2019-10-21",id:1},
-      {text: "bake cake", completed: true, date: "2019-10-21",id:2},
-      {text: "buy grocerys", completed: false, date: "2019-10-21",id:3},
-      {text: "clean the floor", completed: true, date: "2019-10-21",id:4},
+      {text: "take out the trash", completed: false, date: "2019-10-21",id:uuid()},
+      {text: "bake cake", completed: true, date: "2019-10-21",id:uuid()},
+      {text: "buy grocerys", completed: false, date: "2019-10-21",id:uuid()},
+      {text: "clean the floor", completed: true, date: "2019-10-21",id:uuid()},
     ]
   }
   deleteItem =(index, e) => {
@@ -31,7 +32,7 @@ class App extends Component {
       text: taskText,
        completed: false,
         date: "2019-10-21",
-        id:5
+        id:uuid()
     };
     tasksCopy.push(newTask)
     this.setState({
