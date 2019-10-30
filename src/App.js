@@ -18,8 +18,10 @@ class App extends Component {
       {text: "clean the floor", completed: true, date: "2019-10-21",id:4},
     ]
   }
-  deleteItem =(item, e) => {
-
+  deleteItem =(index, e) => {
+    const tasks = Object.assign([], this.state.tasks)
+    tasks.splice(index, 1);
+    this.setState({tasks:tasks})
   }
 
   addNewTask = (taskText) => {
@@ -54,8 +56,8 @@ class App extends Component {
         <Add addNewTaskFunc={this.addNewTask} />
         <CountIncomp count/>
         
-        {incompletedTasks.map(task=>{
-        return<IncompItem text={task.text} completed={task.completed} time={task.date} key={task.id} handleDelete={this.deleteItem.bind(this,item)} />
+        {incompletedTasks.map((task, index)=>{
+        return<IncompItem text={task.text} completed={task.completed} time={task.date} key={task.id} handleDelete={this.deleteItem.bind(this,index)} />
         })};
         
         <ItemComp />
