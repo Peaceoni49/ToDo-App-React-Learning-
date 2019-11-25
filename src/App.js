@@ -12,7 +12,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    tasks: [
+    tasks: [ 
       {text: "take out the trash", completed: false, date: "2019-10-21",id:uuid()},
       {text: "bake cake", completed: true, date: "2019-10-21",id:uuid()},
       {text: "buy grocerys", completed: false, date: "2019-10-21",id:uuid()},

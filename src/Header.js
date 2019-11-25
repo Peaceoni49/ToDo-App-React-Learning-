@@ -6,7 +6,7 @@ class Header extends React.Component {
     render() {
         return (
            <div>
-                <h1>TODO_APPLICATION</h1>
+                <h1>To-Do list</h1>
                 
            </div>
 

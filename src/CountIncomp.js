@@ -3,7 +3,7 @@ class CountIncomp extends React.Component {
    render() {
        return(
         <button type="button" 
-        className="btn btn-primary btn-lg btn-block">
+        className="task-update" >
             You have {this.props.count} incomplete task</button>
 
        );

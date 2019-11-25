@@ -19,24 +19,23 @@ class Add extends React.Component {
     render(){
         return (
     <form>
-  <div className="row">
-    <div className="col-8">
-      <input type="text" className="form-control"
+    
+    
+    <div className="item">
+
+    <input type="text" className="input_text"
        placeholder="Add list"
        value={this.state.newItemText}
        onChange={this.updateNewItemText}
        ></input>
-    </div>
-    
-    
-    <button type="button" 
-    className="btn btn-primary" 
+
+    <button className="editButton"
     data-toggle="button" aria-pressed="false"
       onClick={this.handleClick} disabled={this.state.newItemText.lenght ===0}>
  Add
-</button>
-  
+ </button>
   </div>
+ 
 </form>
             
 

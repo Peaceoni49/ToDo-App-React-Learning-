@@ -4,20 +4,22 @@ class IncompItem extends React.Component {
     render() {
         return (
             
-  <div>
-      <div className= "col-6">
-          <p className={this.props.incompleted ? "incompeted" :""}>
-              {this.props.text}
-          </p>
-      
-      </div>
-
-      <div className= "col">
-      <button className="btn btn-danger">Complete</button>
-      <button className="btn btn-danger" onClick={this.props.handleDelete}>Delete
+<div className="count">      
+    <div className="text">
+      <p className={this.props.incompleted ? "incompeted" :""}>
+              {this.props.text} </p>
+              </div>
+              
+     
+        <div className="click">
+      <button className="completeItem">Complete</button>
+      <button className="deleteItem" onClick={this.props.handleDelete}>Delete
       </button>
-      </div>
-</div>
+        </div>
+      
+      
+    </div>
+    
 
         );
     }

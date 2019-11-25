@@ -2,7 +2,7 @@ import React from "react"
 class ItemComp extends React.Component {
    render() {
        return(
-        <button type="button" className="btn btn-primary btn-lg btn-block">You have 2 complete task</button>
+        <button type="button" className="task-update">You have 2 complete task</button>
 
        );
    } 
