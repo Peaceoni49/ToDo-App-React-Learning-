@@ -1,6 +1,11 @@
 import React from "react"
 import "./IncompItem.css";
+
+
 class IncompItem extends React.Component {
+    handleDelete = () => {
+        this.props.deleteTaskFunc(this.props.id);
+    }
     render() {
         return (
             
@@ -12,8 +17,10 @@ class IncompItem extends React.Component {
               
      
         <div className="click">
-      <button className="completeItem">Complete</button>
-      <button className="deleteItem" onClick={this.props.handleDelete}>Delete
+            {!this.props.completed && (
+      <button className="completeItem" onClick={this.handleComplete}>Complete</button>
+      )}
+      <button className="deleteItem" onClick={this.handleDelete}>Delete
       </button>
         </div>
       

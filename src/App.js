@@ -19,11 +19,7 @@ class App extends Component {
       {text: "clean the floor", completed: true, date: "2019-10-21",id:uuid()},
     ]
   }
-  deleteItem =(index, e) => {
-    const tasks = Object.assign([], this.state.tasks)
-    tasks.splice(index, 1);
-    this.setState({tasks:tasks})
-  }
+  
 
   addNewTask = (taskText) => {
     const tasksCopy = this.state.tasks.slice()
@@ -39,8 +35,27 @@ class App extends Component {
       tasks:tasksCopy
     });
   };
-  handleDelete (event) {
+  deleteTask =(id) => {
+    const filteredTasks =this.state.tasks.filter(task =>{
+      return task.id !== id
+    });
 
+    this.setState({
+      tasks:filteredTasks
+    });
+  }
+
+  completeTask = id => {
+    const updatedTasks = this.state.tasks.map(task => {
+      if (task.id === id)
+      {
+        task.completed =true;
+      }
+      return task;
+    });
+    this.setState({
+      tasks: updatedTasks
+    });
   }
   render() {
     const completedTasks = this.state.tasks.filter(task => {
