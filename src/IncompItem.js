@@ -6,6 +6,9 @@ class IncompItem extends React.Component {
     handleDelete = () => {
         this.props.deleteTaskFunc(this.props.id);
     }
+    handleComplete =() => {
+        this.props.completeTaskFunc(this.props.id);   
+    }
     render() {
         return (
             
