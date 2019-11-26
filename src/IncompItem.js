@@ -21,7 +21,7 @@ class IncompItem extends React.Component {
               
      
         <div className="click">
-            {!this.props.completed && (
+            {!this.props.incompleted && (
       <button className="completeItem" onClick={this.handleComplete}>Complete</button>
       )}
       <button className="deleteItem" onClick={this.handleDelete}>Delete

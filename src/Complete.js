@@ -12,7 +12,7 @@ class Complete extends React.Component {
       
       <div className= "click">
       
-      <button className="deleteItem" onClick={this.props.handleDelete}>Delete
+      <button className="deleteItem" onClick={this.handleDelete}>Delete
       </button>
       </div>
 </div>

@@ -77,7 +77,7 @@ class App extends Component {
         
         {incompletedTasks.map((task)=>{
         return(
-        <IncompItem text={task.text} completed={task.completed} time={task.date} key={task.id} deleteTaskFunc={this.deleteTask} />
+        <IncompItem text={task.text} completed={task.completed} time={task.date} key={task.id} deleteTaskFunc={this.deleteTask} completeTaskFunc={this.completeTask}/>
         );
         })};
         
@@ -85,7 +85,7 @@ class App extends Component {
 
         {completedTasks.map((task, index)=>{
         return(
-          <Complete text={task.text} completed={task.completed} time={task.date} key={task.id} deleteTaskFunc={this.deleteTask}/>
+          <Complete text={task.text} completed={task.completed} time={task.date} key={task.id} deleteTaskFunc={this.deleteTask} completeTaskFunc={this.completeTask}/>
         );
         })};
         
