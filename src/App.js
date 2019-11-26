@@ -36,7 +36,7 @@ class App extends Component {
       tasks:tasksCopy
     });
   };
-  deleteTask =(id) => {
+  deleteTask = id => {
     const filteredTasks =this.state.tasks.filter(task => {
       return task.id !== id
     });
@@ -65,7 +65,7 @@ class App extends Component {
       return task.completed ;
     });
 
-    const incompletedTasks = this.state.tasks.filter(task => {
+    const incompleteTasks = this.state.tasks.filter(task => {
       return task.completed ? false : true;
     });
 
@@ -75,9 +75,9 @@ class App extends Component {
         <Add addNewTaskFunc={this.addNewTask} />
         <CountIncomp count/>
         
-        {incompletedTasks.map((task)=>{
+        {incompleteTasks.map((task)=>{
         return(
-        <IncompItem text={task.text} completed={task.completed} time={task.date} key={task.id} deleteTaskFunc={this.deleteTask} completeTaskFunc={this.completeTask}/>
+        <IncompItem text={task.text} completed={task.completed} time={task.date} key={task.id} id={task.id} deleteTaskFunc={this.deleteTask} completeTaskFunc={this.completeTask}/>
         );
         })};
         
@@ -85,7 +85,7 @@ class App extends Component {
 
         {completedTasks.map((task, index)=>{
         return(
-          <Complete text={task.text} completed={task.completed} time={task.date} key={task.id} deleteTaskFunc={this.deleteTask} completeTaskFunc={this.completeTask}/>
+          <Complete text={task.text} completed={task.completed} time={task.date} key={task.id} id={task.id} deleteTaskFunc={this.deleteTask} />
         );
         })};
         

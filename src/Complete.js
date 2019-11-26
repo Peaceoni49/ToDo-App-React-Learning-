@@ -1,5 +1,12 @@
 import React from "react"
+
+
 class Complete extends React.Component {
+
+    handleDelete = () => {
+        this.props.deleteTaskFunc(this.props.id);
+      }
+      
     render() {
         return (
             <div className="count">
